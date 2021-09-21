@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sin título</title>
+<style>
+	.micontenedor {
+		background-color: yellow;
+	}
+	
+	#contenedor {
+		background-color: cyan;
+	}
+	
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+
+	$(document).ready(function(){
+		//Nos devuelve el html que hay dentro de div "errores". Ojo que aparecen los tabuladores.
+		//alert($("#errores").html());
+		
+		//Modificamos el texto que hay dentro de div "errores".
+		//$("#errores").html("<p> Hay errores en el formulario </p>");
+		
+		//Agrega texto a continuacion de lo que hay dentro de div "errores".
+		//$("#errores").append("<p> Hay errores en el formulario </p>");
+
+		//Agrega texto al comienzo de lo que hay dentro de div "errores".
+		//$("#errores").prepend("<p> Hay errores en el formulario </p>");
+
+		//Agrega texto antes del contenedor div "errores".
+		//$("#errores").before("<p> Hay errores en el formulario </p>");
+
+		//Agrega texto después del contenedor div "errores".
+		//$("#errores").after("<p> Hay errores en el formulario </p>");
+
+		//text funciona igual que html pero no maneja etiquetas html
+		//$("#errores").text("<p> Hay errores en el formulario </p>");
+
+		//con esto sustituimos el texto que hay dentro de las etiquetas h2
+		$("#errores h2").text("Hay errores en el formulario");
+
+	});
+</script>
+</head>
+
+<body>
+<div id="contenedor">
+	<div id="errores" class="micontenedor">
+		<h2>Errores</h2>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sin título</title>
+<style>
+	.micontenedor {
+		background-color: yellow;
+	}
+	
+	#contenedor {
+		background-color: cyan;
+	}
+	
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+	
+	function validar() {
+		var usuario=document.getElementById("usuario").value;
+		var nombre=document.getElementById("nombre").value;
+		var apellido=document.getElementById("apellido").value;
+		
+		if (usuario=="")
+			$("#usuario").after("Rellena este campo, por favor");
+	}
+
+</script>
+</head>
+
+<body>
+<form method="get">
+ 	<input type="text" id="usuario"><br/>
+  	<input type="text" id="nombre"><br/>
+  	<input type="text" id="apellido"><br/>
+	
+	<input type="button" value="Dale" onClick="validar()">
+</form>
+
+</body>
+</html>

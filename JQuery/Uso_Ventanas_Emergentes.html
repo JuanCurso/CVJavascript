@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sin título</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+
+	
+	$(document).ready(function() {
+
+		/*Abre una pagina emergente nueva, los arguemntos son:
+		- Direccion de la pagina.
+		- Un alias identificativo interno.
+		- Tamaño de la ventana, posicion, etc...*/
+		var miVentana=open("http://www.google.com", "Google", "width=500, height=400, left=300, top=200," +
+			"scrollbars=no, toolbars=o");
+
+		
+		$("#botonCerrar").click(function(e) {
+			e.preventDefault();
+			
+			miVentana.close();
+		})
+	});
+
+</script>
+</head>
+
+<body>
+<a href="http://www.pildorasinformaticas.es">Ir a Píldoras</a>
+<br><br><br>
+<a href="" id="botonCerrar">Cerrar</a>
+</body>
+</html>

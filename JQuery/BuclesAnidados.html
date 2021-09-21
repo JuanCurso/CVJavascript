@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sin título</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+
+	// Sin usar bucles automáticos de JQuery
+/*	function comenzar() {
+		var imagenes=document.querySelectorAll("#carrete img");
+
+		for(var i=0; i<imagenes.length; i++) {
+			imagenes[i].style.visibility="hidden";
+		}
+	}
+	
+	window.addEventListener("load", comenzar, false);*/
+	
+	$(document).ready(function() {
+		$("#carrete img").hide();
+	});
+</script>
+
+</head>
+
+<body>
+<div id="carrete">
+	<img src="img/1.jpg"> &nbsp;
+	<img src="img/2.jpg"> &nbsp;
+	<img src="img/3.jpg"> &nbsp;
+	<img src="img/4.jpg"> &nbsp;
+</div>
+</body>
+</html>

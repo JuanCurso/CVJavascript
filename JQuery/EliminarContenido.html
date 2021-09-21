@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sin título</title>
+
+<style>
+
+	#banner {
+		background-color: #F00;
+		width: 450px;
+		height: 300px;
+		position: absolute;
+		left: 400px;
+		top: 50px;
+		font-size: 36px;
+		text-align: center;
+	}
+	
+	#cerrar {
+		cursor: pointer;
+	}
+	
+	img {
+		float: left;
+		margin: 15px;
+		width: 200px;
+		height: 200px;
+	}
+	
+	#sustitucion {
+		float: left;
+		text-align: center;
+		width: 200px;
+		height: 200px;
+		padding: 70px 10px;
+		font-size: 36px;
+	}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+
+	$(document).ready(function() {
+		
+		document.getElementById("cerrar").addEventListener("click", cerrar, false);
+
+		var imagenes=document.querySelectorAll("#carrete img");
+		
+		for (var i=0; i<imagenes.length; i++) {
+			imagenes[i].addEventListener("click", reemplazar, false);
+		}
+
+	});
+	
+	function cerrar(){
+		$("#banner").remove();
+	}
+
+	function reemplazar(e) {
+		$(e.target).replaceWith("<div id='sustitucion'>Agregado al carro.</div>");
+	}
+	
+</script>
+
+</head>
+
+<body>
+<div id="banner">
+	Banner de prueba
+	<p id="cerrar">Cerrar</p>
+</div>
+
+<div id="carrete">
+	<img src="img/1.jpg" id="imagen1"> &nbsp;
+	<img src="img/2.jpg" id="imagen2"> &nbsp;
+	<img src="img/3.jpg" id="imagen3"> &nbsp;
+	<img src="img/4.jpg" id="imagen4"> &nbsp;
+</div>
+</body>
+</html>

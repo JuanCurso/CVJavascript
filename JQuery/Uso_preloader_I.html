@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sin título</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+
+	$(document).ready(function() {
+		
+		//Cargamos la imagen de sustitución previamente al hover
+		var fotoNueva=new Image();
+		fotoNueva.src="imgs/1.jpg";
+		//Ya hemos cargado la imagen
+		
+		
+		
+		$("#foto").hover(function(){
+			
+			$(this).attr("src", fotoNueva.src);
+			
+		},
+		function(){
+			
+			$(this).attr("src","imgs/imgs2/1.jpg");
+			
+			
+		});	
+		
+    });
+
+
+</script>
+</head>
+
+<body>
+
+<img src="imgs/imgs2/1.jpg" width="300" height="200" id="foto">
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sin título</title>
+<style>
+
+table{
+	text-align:center;
+	width:50%;
+	border:none;
+	margin:auto;
+}
+
+img{
+	padding:0 5px;
+}
+h1{
+	text-align:center;
+}
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+
+	$(document).ready(function(){
+		
+		var imagenes=document.querySelectorAll("img");
+		
+		for (var i=0; i<imagenes.length; i++) {
+			imagenes[i].addEventListener("mouseover", cambia, false);
+			imagenes[i].addEventListener("mouseout", restaura, false);
+		}
+
+	});
+	
+	function cambia(e) {
+		
+		var numImagen=e.target.id.substring(3, 4);
+		
+		$(e.target).attr("src", "img/" + numImagen + ".jpg");
+		
+	}
+	
+	function restaura(e) {
+		
+		var numImagen=e.target.id.substring(3, 4);
+		
+		$(e.target).attr("src", "img/" + numImagen + "tenue.jpg");
+		
+	}
+
+</script>
+</head>
+
+<body>
+<h1>Galería de imágenes</h1>
+<table width="100%" border="0">
+  <tr>
+    <td><img src="img/1tenue.jpg" id="img1" ></td>
+    <td><img src="img/2tenue.jpg" id="img2" ></td>
+    <td><img src="img/3tenue.jpg" id="img3" ></td>
+    <td><img src="img/4tenue.jpg" id="img4" ></td>
+  </tr>
+</table>
+</body>
+</html>

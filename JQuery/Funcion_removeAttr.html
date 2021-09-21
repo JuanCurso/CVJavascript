@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sin título</title>
+<style type="text/css">
+#contenedor1 {
+	position: absolute;
+	left: 67px;
+	top: 177px;
+	width: 408px;
+	height: 298px;
+	z-index: 1;
+}
+#contenedor2 {
+	position: absolute;
+	left: 510px;
+	top: 176px;
+	width: 443px;
+	height: 297px;
+	z-index: 2;
+}
+
+ul{
+	list-style:none;
+	
+}
+li{
+	margin:10px 0;
+	font-size:24px;
+	width:95px;
+}
+
+.destacar{
+	background-color:#F00;
+	color:#FFF;
+}
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+<script>
+
+	$(document).ready(function() {
+		var menu=document.querySelectorAll("#contenedor1 li");
+		
+		for(var i=0; i<menu.length; i++) {
+			menu[i].addEventListener("mouseover", resaltar, false);
+			menu[i].addEventListener("mouseout", noResaltar, false);
+		}
+		
+	});
+	
+	function resaltar(e) {
+		$(e.target).addClass("destacar");
+		
+		var imagen=e.target.id.substring(4, 5);
+		
+		$("#contenedor2 img").attr("src", "img/" + imagen + ".jpg");
+	}
+
+	function noResaltar(e) {
+		$(e.target).removeClass("destacar");
+
+		var imagen=e.target.id.substring(3, 4);
+		
+		$("#contenedor2 img").removeAttr("src");
+	}
+
+</script>
+
+</head>
+
+<body>
+<div id="contenedor1">
+
+<ul>
+
+<li id="elem1">Imagen 1</li>
+<li id="elem2">Imagen 2</li>
+<li id="elem3">Imagen 3</li>
+<li id="elem4">Imagen 4</li>
+
+</ul>
+</div>
+<div id="contenedor2">
+<img src="">
+</div>
+
+</body>
+</html>

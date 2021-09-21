@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sin título</title>
+<style>
+	
+	#primer_parrafo {
+		background-color: red;
+	}
+	
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+
+	$(document).ready(function(){
+
+		//Nos muestra el valor de background-color del selector id "primer_parrafo"
+		//alert($("#primer_parrafo").css("background-color"));
+		
+		//Cambiamos el valor de background-color del selector id "primer_parrafo"
+		//$("#primer_parrafo").css("background-color","green");
+
+		//Cambiamos el valor del border con varios valores
+		//$(".destacado").css("border","blue 1px solid");
+
+		//Cambiamos cambiamos varios atributos
+		$(".destacado").css({
+			"border" : "cyan 3px solid",
+			"background-color" : "black",
+			"color" : "red"});
+	
+	
+	});
+</script>
+</head>
+
+<body>
+<p id="primer_parrafo">Primer parrafo</p>
+<p class="destacado">Parrafo destacado</p>
+<p>Tercer parrafo</p>
+
+</body>
+</html>
